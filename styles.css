@@ -15,13 +15,6 @@ body.fitosauna-static {
   font-family: "Archivo", Arial, sans-serif;
 }
 
-body.fitosauna-static h1,
-body.fitosauna-static h2,
-body.fitosauna-static h3,
-body.fitosauna-static h4 {
-  font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
-}
-
 /* The static edition has no WordPress toolbar, cart, or purchase controls. */
 #wpadminbar,
 .fitosauna-cart-drawer,
