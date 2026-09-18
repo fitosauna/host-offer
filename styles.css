@@ -1,0 +1,92 @@
+@import url("original.css");
+
+:root {
+  --ink: #27221a;
+  --paper: #fcf6ec;
+  --gold: #c99527;
+}
+
+html { scroll-behavior: smooth; }
+body.fitosauna-static {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Archivo", Arial, sans-serif;
+}
+
+body.fitosauna-static h1,
+body.fitosauna-static h2,
+body.fitosauna-static h3,
+body.fitosauna-static h4 {
+  font-family: "Archivo Narrow", "Arial Narrow", sans-serif;
+}
+
+/* The static edition has no WordPress toolbar, cart, or purchase controls. */
+#wpadminbar,
+.fitosauna-cart-drawer,
+.cart-contents,
+.header__cart,
+.product-showcase__selector--bundles,
+.product-showcase__bundle-panel,
+.product-showcase__payments,
+.add-to-cart-btn { display: none !important; }
+
+/* Restore natural layout after removing GSAP's captured inline coordinates. */
+#smooth-wrapper,
+#smooth-content { position: static !important; transform: none !important; }
+[data-split] { visibility: visible !important; }
+
+.product-reviews-masonry__grid {
+  height: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.product-reviews-masonry__card {
+  width: auto !important;
+  transform: none !important;
+  position: static !important;
+}
+.product-reviews-masonry__card.is-mobile-collapsed { display: block; }
+.product-reviews-masonry__show-more { display: none; }
+
+.product-showcase__swiper { overflow: hidden; }
+.product-showcase__swiper .swiper-wrapper { display: block; transform: none !important; }
+.product-showcase__swiper .swiper-slide { display: none; width: 100% !important; }
+.product-showcase__swiper .swiper-slide.is-static-active,
+.product-showcase__swiper .swiper-slide:first-child { display: block; }
+.product-showcase__thumb { cursor: pointer; }
+
+.faq-section__answer,
+.faq-item__answer { display: none; }
+.is-open > .faq-section__answer,
+.is-open > .faq-item__answer { display: block; }
+
+.static-form-note {
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: .75;
+}
+
+@media (max-width: 1024px) {
+  .product-reviews-masonry__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+  .product-reviews-masonry__grid { display: block !important; }
+  .product-reviews-masonry__card { margin-bottom: 16px; }
+  .product-reviews-masonry__card.is-mobile-collapsed { display: none; }
+  .product-reviews-masonry__grid.is-expanded .is-mobile-collapsed { display: block; }
+  .product-reviews-masonry__show-more { display: block; }
+}
+
+/* TODO: replace with the real assets/mobile-comp-bg.png once pulled from WordPress.
+   original.css sets this !important on mobile for .components-section; this override
+   falls back to the page's paper background so nothing 404s or looks broken meanwhile. */
+@media screen and (max-width: 768px) {
+  .components-section {
+    background-image: none !important;
+    background-color: var(--paper);
+  }
+}
