@@ -90,35 +90,18 @@ body.fitosauna-static {
   display: none !important;
 }
 
-/* Landing-features section titles ("What's Wrong...", "The Fitosauna Advantage"): the original
-   theme capped the heading well below the actual column width, forcing an overly narrow word-by-word wrap.
-   A small widening of the left column plus a modest font-size trim gives room for a ~3-line wrap
-   without shrinking the right-side card much. */
-.landing-features .outer .inner-left,
-.landing-features .outer .inner-right {
+/* Landing-features section titles ("What's Wrong...", "The Fitosauna Advantage"): the .pin-spacer
+   wrapper (a leftover from the live site's GSAP pinning, which sets its width via JS at runtime) has
+   no CSS width of its own here, so it was collapsing to fit its content instead of claiming its real
+   50% share of the row -- leaving the heading stuck in a much narrower box than it should have, with
+   unused space next to it. Giving .pin-spacer the width the design always intended fixes the wrap
+   at full original size, no shrinking of the card or the heading needed. */
+.landing-features .outer .pin-spacer {
   max-width: 50%;
-}
-@media screen and (min-width: 769px) {
-  .landing-features .outer .inner-left {
-    max-width: 54%;
-  }
-  .landing-features .outer .inner-right {
-    max-width: 46%;
-  }
+  width: 100%;
 }
 .landing-features .outer .inner-left .content h2 {
   max-width: 100%;
-  font-size: 3.6vw;
-}
-@media screen and (max-width: 1024px) {
-  .landing-features .outer .inner-left .content h2 {
-    font-size: 3.8vw;
-  }
-}
-@media screen and (max-width: 768px) {
-  .landing-features .outer .inner-left .content h2 {
-    font-size: 2.25rem;
-  }
 }
 
 /* Restore the divider line between the number and description text in each landing-features card.
