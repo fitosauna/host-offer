@@ -109,10 +109,14 @@ body.fitosauna-static {
 
 /* Restore the divider line between the number and description text in each landing-features card.
    The original CSS expects a .text class on the second <p> that isn't present in this markup. */
+.landing-features .outer .inner-right .content .landing-features-block_info__text {
+  align-items: center;
+}
 .landing-features .outer .inner-right .content .landing-features-block_info__text p:first-of-type {
   width: auto;
   flex: 0 0 auto;
   padding-right: 1rem;
+  align-self: center;
 }
 .landing-features .outer .inner-right .content .landing-features-block_info__text p:nth-of-type(2) {
   width: auto;
@@ -123,6 +127,7 @@ body.fitosauna-static {
   font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.35;
+  align-self: center;
 }
 @media screen and (max-width: 768px) {
   .landing-features .outer .inner-right .content .landing-features-block_info__text p:nth-of-type(2) {
