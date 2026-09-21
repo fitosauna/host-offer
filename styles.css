@@ -91,9 +91,34 @@ body.fitosauna-static {
 }
 
 /* Landing-features section titles ("What's Wrong...", "The Fitosauna Advantage"): the original
-   theme capped the heading well below the actual column width, forcing an overly narrow word-by-word wrap. */
+   theme capped the heading well below the actual column width, forcing an overly narrow word-by-word wrap.
+   Widen the left column itself and moderate the font-size so the heading wraps naturally in ~3 lines
+   across a range of screen widths, not just very large monitors. */
+.landing-features .outer .inner-left,
+.landing-features .outer .inner-right {
+  max-width: 50%;
+}
+@media screen and (min-width: 769px) {
+  .landing-features .outer .inner-left {
+    max-width: 58%;
+  }
+  .landing-features .outer .inner-right {
+    max-width: 42%;
+  }
+}
 .landing-features .outer .inner-left .content h2 {
   max-width: 100%;
+  font-size: 3.1vw;
+}
+@media screen and (max-width: 1024px) {
+  .landing-features .outer .inner-left .content h2 {
+    font-size: 3.4vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .landing-features .outer .inner-left .content h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Restore the divider line between the number and description text in each landing-features card.
