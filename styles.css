@@ -100,6 +100,9 @@ body.fitosauna-static {
   max-width: 50%;
   width: 100%;
 }
+.landing-features .outer .inner-left {
+  max-width: 100%;
+}
 .landing-features .outer .inner-left .content h2 {
   max-width: 100%;
 }
