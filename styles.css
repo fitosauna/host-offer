@@ -92,32 +92,32 @@ body.fitosauna-static {
 
 /* Landing-features section titles ("What's Wrong...", "The Fitosauna Advantage"): the original
    theme capped the heading well below the actual column width, forcing an overly narrow word-by-word wrap.
-   Widen the left column itself and moderate the font-size so the heading wraps naturally in ~3 lines
-   across a range of screen widths, not just very large monitors. */
+   A small widening of the left column plus a modest font-size trim gives room for a ~3-line wrap
+   without shrinking the right-side card much. */
 .landing-features .outer .inner-left,
 .landing-features .outer .inner-right {
   max-width: 50%;
 }
 @media screen and (min-width: 769px) {
   .landing-features .outer .inner-left {
-    max-width: 58%;
+    max-width: 54%;
   }
   .landing-features .outer .inner-right {
-    max-width: 42%;
+    max-width: 46%;
   }
 }
 .landing-features .outer .inner-left .content h2 {
   max-width: 100%;
-  font-size: 3.1vw;
+  font-size: 3.6vw;
 }
 @media screen and (max-width: 1024px) {
   .landing-features .outer .inner-left .content h2 {
-    font-size: 3.4vw;
+    font-size: 3.8vw;
   }
 }
 @media screen and (max-width: 768px) {
   .landing-features .outer .inner-left .content h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 }
 
