@@ -84,7 +84,30 @@ body.fitosauna-static {
   }
 }
 
-/* Hero section: subheading + 4-point benefits checklist (replaces the old single-line subtext) */
+/* Hide decorative GSAP line-split animation layers (aria-hidden duplicates of real <p> text).
+   Without the original site's JS these render alongside the real text, causing duplicated/garbled copy. */
+.split-line {
+  display: none !important;
+}
+
+/* Landing-features section titles ("What's Wrong...", "The Fitosauna Advantage"): the original
+   theme capped the heading well below the actual column width, forcing an overly narrow word-by-word wrap. */
+.landing-features .outer .inner-left .content h2 {
+  max-width: 100%;
+}
+
+/* Restore the divider line between the number and description text in each landing-features card.
+   The original CSS expects a .text class on the second <p> that isn't present in this markup. */
+.landing-features-block_info__text p:nth-of-type(2) {
+  padding-left: 1rem;
+  border-left: 1px solid #27221A;
+  max-width: 15.625rem;
+}
+@media screen and (min-width: 1440px) {
+  .landing-features-block_info__text p:nth-of-type(2) {
+    max-width: 17.361vw;
+  }
+}
 .product-features .feature-1 .left-col .cta-text .hero-benefits {
   display: flex;
   flex-direction: column;
