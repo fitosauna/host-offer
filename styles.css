@@ -91,9 +91,6 @@ body.fitosauna-static {
   gap: 1rem;
   max-width: 26rem;
 }
-.product-features .feature-1 .left-col .cta-text .hero-benefits__title {
-  margin: 0;
-}
 .product-features .feature-1 .left-col .cta-text .hero-benefits__list {
   list-style: none;
   margin: 0;
