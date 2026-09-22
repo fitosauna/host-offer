@@ -216,7 +216,7 @@ body.fitosauna-static {
   --product-showcase-gallery-height: 30rem;
 }
 .product-showcase__layout {
-  grid-template-columns: minmax(0, min(42%, 50rem)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, min(46%, 54rem)) minmax(0, 1fr);
 }
 @media screen and (max-width: 1024px) {
   .product-showcase__layout {
@@ -231,6 +231,32 @@ body.fitosauna-static {
   flex: 0 0 6.8125rem;
   width: 6.8125rem;
   height: 6.8125rem;
+}
+.product-showcase__thumbs {
+  flex: 0 0 6.8125rem;
+  width: 6.8125rem;
+}
+
+/* Replace the browser's default scrollbar (thick, gray, with arrow buttons) with a slim,
+   on-brand one so the thumbnail column doesn't look like an unstyled UI element. */
+.product-showcase__thumbs {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(39, 34, 26, 0.35) transparent;
+}
+.product-showcase__thumbs::-webkit-scrollbar {
+  width: 4px;
+}
+.product-showcase__thumbs::-webkit-scrollbar-track {
+  background: transparent;
+}
+.product-showcase__thumbs::-webkit-scrollbar-thumb {
+  background: rgba(39, 34, 26, 0.35);
+  border-radius: 2px;
+}
+.product-showcase__thumbs::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .product-showcase__eyebrow {
   margin-bottom: 1.5rem;
