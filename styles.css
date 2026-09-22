@@ -35,14 +35,25 @@ body.fitosauna-static {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
+  align-items: stretch;
 }
 .product-reviews-masonry__card {
   width: auto !important;
   transform: none !important;
   position: static !important;
 }
+.product-reviews-masonry__review-content {
+  flex: 1 1 auto;
+}
 .product-reviews-masonry__card.is-mobile-collapsed { display: block; }
 .product-reviews-masonry__show-more { display: none; }
+
+/* The original 94rem min-height was sized for the full ~10-review masonry layout.
+   With only 4 reviews now (one row), that reserved height left a large empty gap
+   before the next section. */
+.product-reviews-masonry {
+  min-height: auto !important;
+}
 
 .product-showcase__swiper { overflow: hidden; }
 .product-showcase__swiper .swiper-wrapper { display: block; transform: none !important; }
