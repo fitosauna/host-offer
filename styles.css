@@ -174,3 +174,25 @@ body.fitosauna-static {
     max-width: 100%;
   }
 }
+
+/* Certificates section: the original theme shows these six badges as a background-image on
+   each .certs-block by default; hovering fades in the descriptive sentence on top (that part
+   was already working). The scrape captured the hover layer but not the default badge images. */
+.certificates .certs-track .certs-block:nth-child(1) {
+  background-image: url("assets/Expertly-crafted-since-2020.png");
+}
+.certificates .certs-track .certs-block:nth-child(2) {
+  background-image: url("assets/globe-eco.svg");
+}
+.certificates .certs-track .certs-block:nth-child(3) {
+  background-image: url("assets/Conformite_Europeenne_logo-1.svg");
+}
+.certificates .certs-track .certs-block:nth-child(4) {
+  background-image: url("assets/Handmade-in-Latvia.svg");
+}
+.certificates .certs-track .certs-block:nth-child(5) {
+  background-image: url("assets/rohs-compliant.svg");
+}
+.certificates .certs-track .certs-block:nth-child(6) {
+  background-image: url("assets/ocean_15132938-1-Vectorized.svg");
+}
