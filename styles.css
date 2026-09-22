@@ -58,8 +58,7 @@ body.fitosauna-static {
 .product-showcase__swiper { overflow: hidden; }
 .product-showcase__swiper .swiper-wrapper { display: block; transform: none !important; }
 .product-showcase__swiper .swiper-slide { display: none; width: 100% !important; }
-.product-showcase__swiper .swiper-slide.is-static-active,
-.product-showcase__swiper .swiper-slide:first-child { display: block; }
+.product-showcase__swiper .swiper-slide.is-static-active { display: block; }
 .product-showcase__thumb { cursor: pointer; }
 
 .faq-section__answer,
@@ -210,8 +209,10 @@ body.fitosauna-static {
 
 /* Product-showcase gallery: the main image height (41.5rem) and column width were sized for
    more/longer text content than what's now shown, making the gallery look oversized next to
-   the shorter info column. */
-:root {
+   the shorter info column. This must be redeclared directly on .product-showcase (not :root) --
+   the original theme sets this variable directly on that element, and a direct declaration
+   always wins over an inherited one regardless of stylesheet order. */
+.product-showcase {
   --product-showcase-gallery-height: 30rem;
 }
 .product-showcase__layout {
@@ -221,4 +222,16 @@ body.fitosauna-static {
   .product-showcase__layout {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* Keep thumbnails at their original size rather than the formula that auto-shrinks them to
+   always fit without scrolling -- the column now scrolls internally (already has
+   overflow-y: auto) once the thumbnails' combined height exceeds the shorter gallery height. */
+.product-showcase__thumb {
+  flex: 0 0 6.8125rem;
+  width: 6.8125rem;
+  height: 6.8125rem;
+}
+.product-showcase__eyebrow {
+  margin-bottom: 1.5rem;
 }
