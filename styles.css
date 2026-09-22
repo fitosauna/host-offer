@@ -207,3 +207,18 @@ body.fitosauna-static {
 .certificates .certs-track .certs-block:nth-child(6) {
   background-image: url("assets/ocean_15132938-1-Vectorized.svg");
 }
+
+/* Product-showcase gallery: the main image height (41.5rem) and column width were sized for
+   more/longer text content than what's now shown, making the gallery look oversized next to
+   the shorter info column. */
+:root {
+  --product-showcase-gallery-height: 30rem;
+}
+.product-showcase__layout {
+  grid-template-columns: minmax(0, min(42%, 50rem)) minmax(0, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .product-showcase__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
