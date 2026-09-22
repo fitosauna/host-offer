@@ -35,52 +35,6 @@
     activate(0);
   });
 
-  const products = {
-    '1196': {
-      title: 'A compact option for smaller spaces and everyday home use',
-      price: '€2600',
-      images: ['Round-3-1.png', 'Round-2.png', 'Round-1.png', 'Product-photos-for-LP-7.png', '9.png'],
-      specs: ['130*78*78 cm', '30 mm (+/- 2 mm)', 'branchless thermo aspen', 'stainless steel', 'Treated with heated linseed oil and beeswax', 'Users up to 182 cm', 'Small rooms', 'Private homes']
-    },
-    '1189': {
-      title: 'More internal space and additional comfort',
-      price: '€3100',
-      images: ['Oval-3-1.png', 'Oval-2.png', 'Product-photos-for-LP-6.png', 'Product-photos-for-LP-7.png', '9.png'],
-      specs: ['130*100*78 cm', '30 mm (+/- 2 mm)', 'branchless thermo aspen', 'stainless steel', 'Treated with heated linseed oil and beeswax', 'Users up to 215 cm', 'Home or business use', 'Extra legroom and backrest']
-    }
-  };
-
-  $all('.product-showcase').forEach((section) => {
-    const choose = (id) => {
-      const product = products[id];
-      if (!product) return;
-      const title = section.querySelector('[data-product-showcase-title]');
-      const price = section.querySelector('[data-product-showcase-price]');
-      if (title) title.textContent = product.title;
-      if (price) price.textContent = product.price;
-      $all('[data-product-showcase-product]', section).forEach((button) => {
-        button.classList.toggle('is-active', button.dataset.productId === id);
-      });
-      $all('.product-showcase__spec-value', section).forEach((value, index) => {
-        if (product.specs[index]) value.textContent = product.specs[index];
-      });
-      const thumbs = $all('.product-showcase__thumb img', section);
-      const slides = $all('.product-showcase__swiper .swiper-slide', section);
-      product.images.forEach((name, index) => {
-        const src = `assets/${name}`;
-        if (thumbs[index]) thumbs[index].src = src;
-        const image = slides[index]?.querySelector('img');
-        const link = slides[index]?.querySelector('a');
-        if (image) image.src = src;
-        if (link) link.href = src;
-      });
-    };
-    $all('[data-product-showcase-product]', section).forEach((button) => {
-      button.addEventListener('click', () => choose(button.dataset.productId));
-    });
-    choose('1196');
-  });
-
   $all('form').forEach((form) => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
