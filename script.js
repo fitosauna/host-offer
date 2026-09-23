@@ -1,6 +1,15 @@
 (() => {
   const $all = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
+  const siteHeader = document.getElementById('site-header');
+  if (siteHeader) {
+    const updateHeaderState = () => {
+      siteHeader.classList.toggle('sticky-header', window.scrollY > 10);
+    };
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+  }
+
   const faqItems = $all('.faq-block');
   faqItems.forEach((item) => {
     const button = item.querySelector('.faq-block_title');
@@ -53,6 +62,39 @@
   });
 
   $all('form').forEach((form) => {
+    if (form.dataset.web3forms === 'true') {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        let note = form.querySelector('.static-form-note');
+        if (!note) {
+          note = document.createElement('p');
+          note.className = 'static-form-note';
+          form.append(note);
+        }
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+        note.textContent = 'Sending...';
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(form))),
+          });
+          const result = await response.json();
+          if (result.success) {
+            note.textContent = "Thank you! We'll be in touch shortly.";
+            form.reset();
+          } else {
+            note.textContent = 'Something went wrong. Please try again or email us directly.';
+          }
+        } catch (err) {
+          note.textContent = 'Something went wrong. Please try again or email us directly.';
+        } finally {
+          if (submitButton) submitButton.disabled = false;
+        }
+      });
+      return;
+    }
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       let note = form.querySelector('.static-form-note');

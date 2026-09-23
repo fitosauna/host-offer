@@ -474,3 +474,9 @@ body.fitosauna-static {
 .form-section .outer .right .form-section_image {
   max-height: 38rem;
 }
+
+/* Safari requires the -webkit- prefixed property for backdrop-filter; the original theme's
+   sticky-header rule only had the unprefixed version. */
+.header.sticky-header {
+  -webkit-backdrop-filter: blur(28px);
+}
