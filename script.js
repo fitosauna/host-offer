@@ -10,6 +10,31 @@
     window.addEventListener('scroll', updateHeaderState, { passive: true });
   }
 
+  $all('.pf-video-wrapper').forEach((wrapper) => {
+    const video = wrapper.querySelector('.pf-video');
+    const playButton = wrapper.querySelector('.pf-video-play');
+    if (!video || !playButton) return;
+    const showPlayButton = () => playButton.classList.remove('paused');
+    const hidePlayButton = () => playButton.classList.add('paused');
+    playButton.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+    video.addEventListener('play', hidePlayButton);
+    video.addEventListener('pause', showPlayButton);
+    video.addEventListener('ended', showPlayButton);
+  });
+
   const faqItems = $all('.faq-block');
   faqItems.forEach((item) => {
     const button = item.querySelector('.faq-block_title');
