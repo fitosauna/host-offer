@@ -499,3 +499,11 @@ body.fitosauna-static {
   min-height: auto;
   padding-top: 6rem;
 }
+
+/* Comparison table section: the CTA button uses the base .button class, which the theme
+   sets to opacity: 0 by default (meant to be revealed by a scroll-triggered animation this
+   static rebuild doesn't have -- other CTA buttons on the page either use a different class
+   or have their own opacity: 1 override already; this one didn't). */
+.table-section--comparison .heading .button {
+  opacity: 1;
+}
