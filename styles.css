@@ -480,3 +480,14 @@ body.fitosauna-static {
 .header.sticky-header {
   -webkit-backdrop-filter: blur(28px);
 }
+
+/* Landing-features cards (Attract More Guests / Fits Any Space / Easy for You...): the text
+   row had a fixed min-height sized for a longer two-line description, leaving a lot of empty
+   vertical space now that each card only has one short sentence. */
+.landing-features .outer .inner-right .content .landing-features-block_info {
+  padding: 1.0625rem 1rem 0.875rem;
+}
+.landing-features .outer .inner-right .content .landing-features-block_info__text {
+  padding-top: 0.5rem;
+  min-height: 0;
+}
