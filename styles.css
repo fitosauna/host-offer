@@ -224,17 +224,27 @@ body.fitosauna-static {
   }
 }
 
-/* Keep thumbnails at their original size rather than the formula that auto-shrinks them to
-   always fit without scrolling -- the column now scrolls internally (already has
-   overflow-y: auto) once the thumbnails' combined height exceeds the shorter gallery height. */
+/* Show each thumbnail at its image's natural proportions (full width, no forced square crop)
+   instead of the previous fixed-square box. Height now follows each photo's own aspect ratio. */
 .product-showcase__thumb {
-  flex: 0 0 6.8125rem;
-  width: 6.8125rem;
-  height: 6.8125rem;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.product-showcase__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .product-showcase__thumbs {
   flex: 0 0 6.8125rem;
   width: 6.8125rem;
+  height: auto;
+  max-height: var(--product-showcase-main-image-height);
+  align-items: stretch;
+  overflow-x: hidden;
 }
 
 /* Replace the browser's default scrollbar (thick, gray, with arrow buttons) with a slim,
