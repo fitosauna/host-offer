@@ -340,3 +340,25 @@ body.fitosauna-static {
   margin-top: 0.15rem;
   background: url("assets/check-circle.svg") center/contain no-repeat;
 }
+
+/* Two-cta-section (30-day guarantee / 5-year warranty cards): give the eyebrow badge more
+   room before the title, and push the icon down into the empty space above the checklist
+   so it doesn't sit crowded right under the heading. */
+.two-cta-section .outer .left .info-cta .eyebrow,
+.two-cta-section .outer .right .info-cta .eyebrow {
+  margin-bottom: 1.5rem;
+}
+.two-cta-section .outer .left .info-cta img,
+.two-cta-section .outer .right .info-cta img {
+  margin-top: 2.5rem;
+}
+
+/* Reduce the oversized gap between the FAQ section and this one. */
+.two-cta-section {
+  padding-top: 4rem;
+}
+@media screen and (max-width: 768px) {
+  .two-cta-section {
+    padding-top: 3rem;
+  }
+}
