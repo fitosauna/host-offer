@@ -1,15 +1,23 @@
 (() => {
   const $all = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-  $all('.faq-block').forEach((item) => {
+  const faqItems = $all('.faq-block');
+  faqItems.forEach((item) => {
     const button = item.querySelector('.faq-block_title');
     if (!button) return;
     button.setAttribute('role', 'button');
     button.setAttribute('tabindex', '0');
     item.setAttribute('aria-expanded', 'false');
     const toggle = () => {
-      const open = item.classList.toggle('active');
-      item.setAttribute('aria-expanded', String(open));
+      const willOpen = !item.classList.contains('active');
+      faqItems.forEach((other) => {
+        if (other !== item) {
+          other.classList.remove('active');
+          other.setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('active', willOpen);
+      item.setAttribute('aria-expanded', String(willOpen));
     };
     item.addEventListener('click', toggle);
     button.addEventListener('keydown', (e) => {
