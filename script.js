@@ -1,13 +1,22 @@
 (() => {
   const $all = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-  $all('.faq-section__item, .faq-item').forEach((item) => {
-    const button = item.querySelector('button, .faq-section__question, .faq-item__question');
+  $all('.faq-block').forEach((item) => {
+    const button = item.querySelector('.faq-block_title');
     if (!button) return;
-    button.setAttribute('aria-expanded', 'false');
-    button.addEventListener('click', () => {
-      const open = item.classList.toggle('is-open');
-      button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('role', 'button');
+    button.setAttribute('tabindex', '0');
+    item.setAttribute('aria-expanded', 'false');
+    const toggle = () => {
+      const open = item.classList.toggle('active');
+      item.setAttribute('aria-expanded', String(open));
+    };
+    item.addEventListener('click', toggle);
+    button.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
     });
   });
 
