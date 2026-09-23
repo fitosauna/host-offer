@@ -272,6 +272,20 @@ body.fitosauna-static {
   margin-bottom: 1.5rem;
 }
 
+/* FAQ section title: same missing .pin-spacer width bug as the landing-features sections --
+   the actual flex child (.pin-spacer) had no width of its own, so .inner-left's 50% width
+   never resolved correctly, collapsing the heading into a much narrower box than intended. */
+.faq-section .outer .pin-spacer {
+  max-width: 50%;
+  width: 100%;
+}
+.faq-section .outer .inner-left {
+  max-width: 100%;
+}
+.faq-section .outer .inner-left .content h2 {
+  max-width: 100%;
+}
+
 /* Free-gift callout box, sitting above the consultation button. Reuses the same checkmark
    pattern (check-circle.svg) as the hero section's benefits list for visual consistency. */
 .product-showcase__gift {
