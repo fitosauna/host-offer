@@ -491,3 +491,11 @@ body.fitosauna-static {
   padding-top: 0.5rem;
   min-height: 0;
 }
+
+/* Landing-features sections were forced to min-height: 100vh, sized for the original theme's
+   fuller content. Now that the cards are more compact, that reserved full-screen height leaves
+   a large empty gap before the next section starts. */
+.landing-features {
+  min-height: auto;
+  padding-top: 6rem;
+}
