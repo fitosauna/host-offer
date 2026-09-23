@@ -371,7 +371,7 @@ body.fitosauna-static {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  max-width: 28.625rem;
+  max-width: 42rem;
   margin-top: 2rem;
 }
 .consultation-form__note {
@@ -427,19 +427,23 @@ body.fitosauna-static {
   gap: 0.75rem;
 }
 .consultation-form__phone-code {
-  flex: 0 0 6rem;
-  width: 6rem;
+  flex: 0 0 8rem;
+  width: 8rem;
   cursor: pointer;
 }
 .consultation-form__phone-row input {
   flex: 1 1 auto;
 }
-.consultation-form__submit {
-  align-self: flex-start;
+.consultation-form__submit-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 0.5rem;
-  padding: 0.875rem 2rem;
+}
+.consultation-form__submit {
+  flex: 1 1 auto;
+  padding: 1.125rem 2rem;
   border: 0;
-  border-radius: 999px;
   background: var(--ink);
   color: var(--paper);
   font-family: "Archivo Narrow", sans-serif;
@@ -453,7 +457,20 @@ body.fitosauna-static {
 .consultation-form__submit:hover {
   opacity: 0.85;
 }
+.consultation-form__submit-arrow {
+  flex: 0 0 3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background-color: var(--ink);
+  background-image: url("assets/arrow-narrow-right-beige.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+}
+.form-section .outer .right p {
+  font-size: 0.875rem;
+}
 .form-section .outer .right .form-section_image {
-  max-height: 28rem;
-  align-self: center;
+  max-height: 38rem;
 }
