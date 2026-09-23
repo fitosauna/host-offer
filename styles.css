@@ -362,3 +362,98 @@ body.fitosauna-static {
     padding-top: 3rem;
   }
 }
+
+/* Consultation form: replaces the original Ninja Forms + intl-tel-input plugin markup, which
+   dumped ~75KB of unstyled HTML (a hardcoded 244-country dropdown with no working JS, a visible
+   spam honeypot field, and completely unstyled inputs) into the page. This is a clean, compact,
+   working replacement styled to match the rest of the site. */
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 28.625rem;
+  margin-top: 2rem;
+}
+.consultation-form__note {
+  margin: 0;
+  color: rgba(39, 34, 26, 0.6);
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.consultation-form__req {
+  color: #c99527;
+}
+.consultation-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.consultation-form__field label {
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(39, 34, 26, 0.6);
+}
+.consultation-form__field input,
+.consultation-form__field textarea,
+.consultation-form__phone-code {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(39, 34, 26, 0.3);
+  background: transparent;
+  padding: 0.5rem 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.consultation-form__field input:focus,
+.consultation-form__field textarea:focus,
+.consultation-form__phone-code:focus {
+  border-color: var(--ink);
+}
+.consultation-form__field textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+.consultation-form__phone-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.consultation-form__phone-code {
+  flex: 0 0 6rem;
+  width: 6rem;
+  cursor: pointer;
+}
+.consultation-form__phone-row input {
+  flex: 1 1 auto;
+}
+.consultation-form__submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.875rem 2rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.consultation-form__submit:hover {
+  opacity: 0.85;
+}
+.form-section .outer .right .form-section_image {
+  max-height: 28rem;
+  align-self: center;
+}
