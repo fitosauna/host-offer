@@ -507,3 +507,10 @@ body.fitosauna-static {
 .table-section--comparison .heading .button {
   opacity: 1;
 }
+
+/* Slightly larger eyebrow text ("5 years warranty", "faq") for readability -- both were
+   0.625rem (10px), a bit small compared to the rest of the design. */
+.product-showcase__eyebrow,
+.faq-section .outer .inner-left .content .eyebrow {
+  font-size: 0.75rem;
+}
