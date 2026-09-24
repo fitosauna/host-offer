@@ -515,10 +515,10 @@ body.fitosauna-static {
   font-size: 0.75rem;
 }
 
-/* Certificates badges 1 and 4 are both text-based images (PNG and SVG respectively) from
-   different sources with very different raw pixel dimensions, so background-size: auto
-   rendered them at mismatched visual sizes. Giving both an explicit matching height instead. */
-.certificates .certs-track .certs-block:nth-child(1),
+/* Certificate badge 4 (Handmade in Latvia SVG) rendered much larger than the others since
+   background-size: auto uses each file's raw pixel dimensions, and this SVG's declared size
+   is its actual intended display size. Badge 1 was already correct at its natural size and
+   doesn't need any override. */
 .certificates .certs-track .certs-block:nth-child(4) {
   background-size: auto 3rem;
 }
