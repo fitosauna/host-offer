@@ -514,3 +514,11 @@ body.fitosauna-static {
 .faq-section .outer .inner-left .content .eyebrow {
   font-size: 0.75rem;
 }
+
+/* Certificates badges 1 and 4 are both text-based images (PNG and SVG respectively) from
+   different sources with very different raw pixel dimensions, so background-size: auto
+   rendered them at mismatched visual sizes. Giving both an explicit matching height instead. */
+.certificates .certs-track .certs-block:nth-child(1),
+.certificates .certs-track .certs-block:nth-child(4) {
+  background-size: auto 3rem;
+}
