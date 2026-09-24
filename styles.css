@@ -605,3 +605,14 @@ body.fitosauna-static {
     padding: 3rem 1rem;
   }
 }
+
+/* Balance the gap after the affiliate section (before FAQ) to match the 3rem gap before it --
+   FAQ's original top padding (8rem) was creating a much larger gap on one side. */
+.faq-section {
+  padding-top: 3rem;
+}
+@media screen and (max-width: 768px) {
+  .faq-section {
+    padding-top: 2rem;
+  }
+}
