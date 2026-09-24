@@ -515,6 +515,10 @@ body.fitosauna-static {
   font-size: 0.75rem;
 }
 
+/* Badge 1 (Expertly Crafted PNG) sized down slightly from its natural ~97px height. */
+.certificates .certs-track .certs-block:nth-child(1) {
+  background-size: auto 5rem;
+}
 /* Badge 4 (Handmade in Latvia SVG) sized down slightly. Badge 1 is left completely untouched
    at its natural size -- no override. */
 .certificates .certs-track .certs-block:nth-child(4) {
