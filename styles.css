@@ -515,12 +515,11 @@ body.fitosauna-static {
   font-size: 0.75rem;
 }
 
-/* Certificate badge 4 (Handmade in Latvia SVG) rendered much larger than the others since
-   background-size: auto uses each file's raw pixel dimensions, and this SVG's declared size
-   is its actual intended display size. Badge 1 was already correct at its natural size and
-   doesn't need any override. */
+/* Badge 1 (Expertly Crafted PNG) was too large at its natural size (~97px tall); badge 4
+   (Handmade in Latvia SVG) needs to visually match it. Giving both the same explicit height. */
+.certificates .certs-track .certs-block:nth-child(1),
 .certificates .certs-track .certs-block:nth-child(4) {
-  background-size: auto 3rem;
+  background-size: auto 4.5rem;
 }
 
 /* Affiliate Opportunity section. Uses a full-bleed dark ink background (the same ink color
