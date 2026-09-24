@@ -213,7 +213,7 @@ body.fitosauna-static {
    the original theme sets this variable directly on that element, and a direct declaration
    always wins over an inherited one regardless of stylesheet order. */
 .product-showcase {
-  --product-showcase-gallery-height: 26rem;
+  --product-showcase-gallery-height: 30rem;
 }
 .product-showcase__layout {
   grid-template-columns: minmax(0, min(46%, 54rem)) minmax(0, 1fr);
@@ -756,11 +756,11 @@ body.fitosauna-static {
   gap: 1.5rem;
 }
 .product-showcase__details-row .product-showcase__bundle {
-  flex: 1 1 50%;
+  flex: 1 1 44%;
   min-width: 0;
 }
 .product-showcase__details-row .product-showcase__specs {
-  flex: 1 1 50%;
+  flex: 1 1 56%;
   min-width: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
