@@ -675,7 +675,7 @@ body.fitosauna-static {
    actual €3250 bundle price = €400 real savings). */
 .product-showcase__price-group {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.625rem;
 }
@@ -687,12 +687,12 @@ body.fitosauna-static {
   text-decoration: line-through;
 }
 .product-showcase__price-save {
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1.125rem;
   border-radius: 999px;
   background: rgba(46, 125, 79, 0.14);
   color: #2e7d4f;
   font-family: "Archivo Narrow", sans-serif;
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   font-weight: 700;
 }
 
