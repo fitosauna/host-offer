@@ -531,8 +531,14 @@ body.fitosauna-static {
   background-color: var(--ink);
   width: 100vw;
   max-width: 100vw;
+  margin-top: 3rem;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+}
+@media screen and (max-width: 768px) {
+  .affiliate-section {
+    margin-top: 2rem;
+  }
 }
 .affiliate-section .outer {
   max-width: 56rem;
