@@ -1,7 +1,34 @@
 (() => {
   const $all = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-  const siteHeader = document.getElementById('site-header');
+  $all('.landing-gallery').forEach((section) => {
+    const thumbs = $all('.landing-gallery__thumb', section);
+    if (!thumbs.length) return;
+    const mainImg = section.querySelector('[data-gallery-main]');
+    const desc = section.querySelector('[data-gallery-desc]');
+    const currentEl = section.querySelector('[data-gallery-current]');
+    const prevBtn = section.querySelector('[data-gallery-prev]');
+    const nextBtn = section.querySelector('[data-gallery-next]');
+    let index = 0;
+
+    const show = (i) => {
+      index = (i + thumbs.length) % thumbs.length;
+      const thumb = thumbs[index];
+      thumbs.forEach((t, ti) => t.classList.toggle('is-active', ti === index));
+      if (mainImg) {
+        mainImg.src = thumb.dataset.image;
+        mainImg.alt = thumb.dataset.alt || '';
+      }
+      if (desc) desc.innerHTML = thumb.dataset.text || '';
+      if (currentEl) currentEl.textContent = String(index + 1).padStart(2, '0');
+    };
+
+    thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => show(i)));
+    if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+  });
+
+
   if (siteHeader) {
     const updateHeaderState = () => {
       siteHeader.classList.toggle('sticky-header', window.scrollY > 10);
