@@ -620,3 +620,42 @@ body.fitosauna-static {
     padding-top: 2rem;
   }
 }
+
+/* Trust-points row (In stock / 5 years warranty / 30 days risk-free / Easy 3 min. setup),
+   replacing the removed scrolling ticker banner with a static icon row matching the site's
+   line-art icon style. */
+.product-showcase__trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(39, 34, 26, 0.15);
+}
+.product-showcase__trust-point {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.product-showcase__trust-point img {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+}
+.product-showcase__trust-point-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.product-showcase__trust-point-text strong {
+  font-family: "Archivo", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.product-showcase__trust-point-text span {
+  font-family: "Archivo", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
