@@ -745,3 +745,34 @@ body.fitosauna-static {
   margin-top: 0.5rem;
   padding-top: 1rem;
 }
+
+/* Title/price update + side-by-side layout: put the "Complete Set Includes" box and specs
+   next to each other instead of stacked, so the whole panel is shorter and fits on screen
+   without excess scrolling. Specs collapse to a single column within their half (the original
+   2-column spec layout would be too cramped at half width). */
+.product-showcase__details-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.product-showcase__details-row .product-showcase__bundle {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+.product-showcase__details-row .product-showcase__specs {
+  flex: 1 1 50%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.product-showcase__details-row .product-showcase__spec-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .product-showcase__details-row {
+    flex-direction: column;
+  }
+}
