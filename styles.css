@@ -844,7 +844,7 @@ body.fitosauna-static {
 }
 .landing-gallery__main {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 8;
   overflow: hidden;
 }
 .landing-gallery__main img {
