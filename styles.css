@@ -944,6 +944,8 @@ body.fitosauna-static {
 }
 .hero-urgency {
   margin: 0;
+  max-width: 13rem;
+  line-height: 1.35;
   color: #c99527;
   font-family: "Archivo Narrow", sans-serif;
   font-size: 0.75rem;
