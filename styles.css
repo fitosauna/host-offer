@@ -951,6 +951,11 @@ body.fitosauna-static {
 .product-features .outer .feature-1 .left-col {
   justify-content: space-between;
 }
+@media screen and (min-width: 1025px) {
+  .product-features .outer .feature-1 .left-col {
+    padding-bottom: 0.5rem;
+  }
+}
 .hero-top {
   display: flex;
   flex-direction: column;
@@ -961,9 +966,10 @@ body.fitosauna-static {
   width: fit-content;
   max-width: 26rem;
   padding: 0.875rem 1.25rem;
-  border-radius: 0.75rem;
-  background: #c99527;
-  color: var(--ink);
+  border-radius: 0;
+  border: 1px solid #c99527;
+  background: transparent;
+  color: #c99527;
   font-family: "Archivo", sans-serif;
   font-size: 1.0625rem;
   font-weight: 700;
