@@ -897,3 +897,10 @@ body.fitosauna-static {
     flex: 1 1 calc(33.333% - 0.5rem);
   }
 }
+
+/* Enlarge the EU/NextGenerationEU funding logos in the footer -- they were capped small
+   enough to be hard to read. */
+.footer--compact .footer-compact__logos img {
+  max-width: 11rem;
+  max-height: 5rem;
+}
