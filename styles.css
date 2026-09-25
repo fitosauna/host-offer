@@ -951,11 +951,6 @@ body.fitosauna-static {
 .product-features .outer .feature-1 .left-col {
   justify-content: space-between;
 }
-@media screen and (min-width: 1025px) {
-  .product-features .outer .feature-1 .left-col {
-    padding-bottom: 0.5rem;
-  }
-}
 .hero-top {
   display: flex;
   flex-direction: column;
@@ -979,5 +974,21 @@ body.fitosauna-static {
   .hero-offer {
     font-size: 0.9375rem;
     padding: 0.75rem 1rem;
+  }
+}
+
+/* Hero title: the theme capped the heading at 513px (35.625vw at wide viewports), too narrow
+   for "Unique In-Room Sauna" to fit on one line at this font-size even with an explicit <br>
+   forcing that line break -- the browser was still wrapping "Sauna" onto a 4th line internally.
+   Removing the cap lets it use the column's real available width. */
+.product-features .outer .feature-1 .left-col h2 {
+  max-width: 100%;
+}
+
+/* Bring the bottom padding back up a bit -- 0.5rem put the CTA/bullets too close to the very
+   bottom of the section. */
+@media screen and (min-width: 1025px) {
+  .product-features .outer .feature-1 .left-col {
+    padding-bottom: 1.75rem;
   }
 }
