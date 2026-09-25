@@ -940,11 +940,13 @@ body.fitosauna-static {
    3. A prominent gold offer badge sits right below the title instead of a small note by the
       button -- gold rather than a black/dark block, so it doesn't visually compete with the
       large product photo the way a dark panel would in an already-busy hero. */
-.product-features .outer {
-  min-height: 100vh;
-}
-.product-features .outer .feature-1 {
-  min-height: 100vh;
+@media screen and (min-width: 769px) {
+  .product-features .outer {
+    min-height: calc(100vh - 4.25rem);
+  }
+  .product-features .outer .feature-1 {
+    min-height: calc(100vh - 4.25rem);
+  }
 }
 .product-features .outer .feature-1 .left-col {
   justify-content: space-between;
