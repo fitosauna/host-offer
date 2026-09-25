@@ -933,22 +933,43 @@ body.fitosauna-static {
   background-image: url("assets/arrow-narrow-right-gold.svg");
 }
 
-/* Small urgency note under the hero CTA button, reinforcing the "Claim your offer" button
-   with the actual scarcity/offer detail rather than leaving it unexplained. */
-.arrow-btn.desktop,
-.button.mobile {
+/* Hero section redesign:
+   1. Extend the hero row to fill the viewport so the photo reaches the bottom of the screen.
+   2. Push the bullet list + CTA button down to the bottom of the left column, so they align
+      with the bottom edge of the image instead of floating mid-height.
+   3. A prominent gold offer badge sits right below the title instead of a small note by the
+      button -- gold rather than a black/dark block, so it doesn't visually compete with the
+      large product photo the way a dark panel would in an already-busy hero. */
+.product-features .outer {
+  min-height: 100vh;
+}
+.product-features .outer .feature-1 {
+  min-height: 100vh;
+}
+.product-features .outer .feature-1 .left-col {
+  justify-content: space-between;
+}
+.hero-top {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
-.hero-urgency {
-  margin: 0;
-  max-width: 13rem;
-  line-height: 1.35;
-  color: #c99527;
-  font-family: "Archivo Narrow", sans-serif;
-  font-size: 0.75rem;
+.hero-offer {
+  display: inline-block;
+  width: fit-content;
+  max-width: 26rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  background: #c99527;
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-size: 1.0625rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+@media screen and (max-width: 768px) {
+  .hero-offer {
+    font-size: 0.9375rem;
+    padding: 0.75rem 1rem;
+  }
 }
