@@ -932,3 +932,21 @@ body.fitosauna-static {
   background-color: transparent;
   background-image: url("assets/arrow-narrow-right-gold.svg");
 }
+
+/* Small urgency note under the hero CTA button, reinforcing the "Claim your offer" button
+   with the actual scarcity/offer detail rather than leaving it unexplained. */
+.arrow-btn.desktop,
+.button.mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.hero-urgency {
+  margin: 0;
+  color: #c99527;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
