@@ -506,7 +506,14 @@ body.fitosauna-static {
    a large empty gap before the next section starts. */
 .landing-features {
   min-height: auto;
-  padding-top: 6rem;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .landing-features {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+  }
 }
 
 /* Comparison table section: the CTA button uses the base .button class, which the theme
