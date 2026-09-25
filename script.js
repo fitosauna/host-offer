@@ -29,6 +29,7 @@
   });
 
 
+  const siteHeader = document.getElementById('site-header');
   if (siteHeader) {
     const updateHeaderState = () => {
       siteHeader.classList.toggle('sticky-header', window.scrollY > 10);
