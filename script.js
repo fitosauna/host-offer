@@ -57,6 +57,12 @@
     window.addEventListener('scroll', updateHeaderState, { passive: true });
   }
 
+  $all('.certificates .certs-block').forEach((card) => {
+    card.addEventListener('touchstart', () => card.classList.add('is-touched'), { passive: true });
+    card.addEventListener('touchend', () => card.classList.remove('is-touched'), { passive: true });
+    card.addEventListener('touchcancel', () => card.classList.remove('is-touched'), { passive: true });
+  });
+
   $all('[data-certificates-swiper]').forEach((track) => {
     const scrollbar = track.parentElement?.querySelector('[data-certificates-scrollbar]');
     const thumb = scrollbar?.querySelector('.certs-scrollbar__thumb');

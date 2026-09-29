@@ -1216,9 +1216,8 @@ body.fitosauna-static {
 /* Certificates carousel on mobile: overflow:hidden meant the real Swiper.js library (never
    loaded, same as the other carousels on this site) was the only thing that could move the
    slides -- there was no way to scroll it at all. Enabling native touch-scroll instead.
-   Also making the description text permanently visible on mobile instead of relying on
-   :hover (correctly unavailable on touch) or :active (only visible while actively pressing,
-   disappearing the instant you lift your finger -- not usable for reading longer text). */
+   (Text-reveal-on-touch is handled by the theme's own :active rule already -- these cards
+   show an icon by default and reveal the description text while actively pressed.) */
 @media screen and (max-width: 768px) {
   .certificates .certs {
     overflow-x: auto !important;
@@ -1228,11 +1227,13 @@ body.fitosauna-static {
   .certificates .certs::-webkit-scrollbar {
     display: none;
   }
-  .certificates .certs-block .inner:before {
-    transform: scale(1) !important;
+  /* Backs up :active with a JS-driven class, since :active is known to be unreliable on
+     iOS Safari for elements (like this div) that aren't naturally interactive. */
+  .certificates .certs-block.is-touched .inner:before {
+    transform: scale(1);
   }
-  .certificates .certs-block .inner p {
-    opacity: 1 !important;
-    scale: 1 !important;
+  .certificates .certs-block.is-touched .inner p {
+    opacity: 1;
+    scale: 1;
   }
 }
