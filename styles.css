@@ -1162,11 +1162,17 @@ body.fitosauna-static {
   }
 }
 
-/* Mobile gallery: hide the progress-bar strip under the thumbnails (purely decorative, no
-   functionality of its own) since the thumbnail row already lets you pick a photo directly.
-   Keep the "01/06" count -- it's a useful readout even without the bars. */
+
+/* Hide the thumbnail row's horizontal scrollbar on mobile -- it was falling back to the
+   browser's default thick grey scrollbar since the earlier scrollbar styling only set a
+   width (for the desktop vertical column), never a height for a horizontal one. The row
+   stays swipeable/scrollable either way, just without a visible bar. */
 @media screen and (max-width: 768px) {
-  .product-showcase__progress {
+  .product-showcase__thumbs {
+    scrollbar-width: none;
+  }
+  .product-showcase__thumbs::-webkit-scrollbar {
     display: none;
+    height: 0;
   }
 }
