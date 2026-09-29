@@ -901,10 +901,16 @@ body.fitosauna-static {
 }
 @media screen and (max-width: 768px) {
   .landing-gallery__thumbs {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
   }
   .landing-gallery__thumb {
-    flex: 1 1 calc(33.333% - 0.5rem);
+    flex: 0 0 auto;
+    width: 5.5rem;
+    scroll-snap-align: start;
   }
 }
 
