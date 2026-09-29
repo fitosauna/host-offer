@@ -1052,3 +1052,29 @@ body.fitosauna-static {
     margin-bottom: 0.5rem;
   }
 }
+
+/* "Heats Up In Just 15 Minutes" section on mobile: title, then video, then the 3 steps.
+   The title and steps live together in .left-col and the video is a separate .right-col
+   sibling, so a duplicate mobile-only title is added before both, and flex order reorders
+   all three top-level pieces (title / video / steps) without touching desktop's layout. */
+.how-to-block__title--desktop {
+  display: block;
+}
+.how-to-block__title--mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .how-to-block__title--desktop {
+    display: none;
+  }
+  .how-to-block__title--mobile {
+    display: block;
+    order: 1;
+  }
+  .product-how-to .how-to-block .right-col {
+    order: 2;
+  }
+  .product-how-to .how-to-block .left-col {
+    order: 3;
+  }
+}
