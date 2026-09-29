@@ -116,6 +116,11 @@ body.fitosauna-static {
 .landing-features .outer .inner-left .content h2 {
   max-width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .landing-features .outer .pin-spacer {
+    max-width: 100%;
+  }
+}
 
 /* Restore the divider line between the number and description text in each landing-features card.
    The original CSS expects a .text class on the second <p> that isn't present in this markup. */
@@ -511,7 +516,7 @@ body.fitosauna-static {
 }
 @media screen and (max-width: 768px) {
   .landing-features {
-    padding-top: 5rem;
+    padding-top: 2.5rem;
     padding-bottom: 1rem;
   }
 }
@@ -810,6 +815,11 @@ body.fitosauna-static {
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .landing-gallery__desc {
+    max-width: 100%;
+  }
 }
 .landing-gallery__nav {
   display: flex;
