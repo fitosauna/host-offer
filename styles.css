@@ -1189,3 +1189,18 @@ body.fitosauna-static {
     margin-top: 0.75rem;
   }
 }
+
+/* Hero on mobile: .left-col used justify-content: space-between (meant for desktop, where it
+   pushes the CTA/bullets to align with the image's bottom), but on mobile this produced an
+   uneven, unpredictable gap between the title and the bullets vs. the gap above the title.
+   Using an explicit, equal gap on both sides instead so the title sits centered between the
+   image and the bullets. */
+@media screen and (max-width: 768px) {
+  .product-features .outer .feature-1 .left-col {
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  .product-features .outer .feature-1 .left-col .cta-text {
+    margin-top: 0 !important;
+  }
+}
