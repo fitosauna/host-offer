@@ -294,6 +294,11 @@ body.fitosauna-static {
 .faq-section .outer .inner-left .content h2 {
   max-width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .faq-section .outer .pin-spacer {
+    max-width: 100%;
+  }
+}
 
 /* Subtitle line under the product title, matching the reference design's descriptive
    line beneath the product name. */
