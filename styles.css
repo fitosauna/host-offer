@@ -1181,3 +1181,11 @@ body.fitosauna-static {
     height: 0;
   }
 }
+
+/* Bring the consultation form closer to the intro paragraph on mobile, now that the
+   "Fields marked with *" note (which used to sit between them) has been removed. */
+@media screen and (max-width: 768px) {
+  .consultation-form {
+    margin-top: 0.75rem;
+  }
+}
