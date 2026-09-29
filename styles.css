@@ -1097,3 +1097,24 @@ body.fitosauna-static {
     padding-bottom: 0 !important;
   }
 }
+
+/* The video box itself (not a gap between elements) was the real source of the perceived
+   "too much space" on mobile -- its fixed aspect-ratio makes it 305px tall on a 343px-wide
+   column. Shortening the box directly, confirmed via a local render + computed-style check
+   that the actual gap to the steps below is already a tight 8px. */
+@media screen and (max-width: 768px) {
+  .product-how-to .how-to-block__media .pf-video-wrapper {
+    padding-bottom: 62%;
+  }
+}
+
+/* Found via direct measurement: .right-col has flex: 1 1 auto on mobile inside .how-to-block,
+   which itself has a fixed viewport-derived height. That flex-grow makes .right-col stretch
+   to fill all leftover space in the fixed-height container regardless of the video's actual
+   height, creating a large empty gap below the video that padding/margin fixes couldn't
+   touch. Stopping it from growing fixes this at the source. */
+@media screen and (max-width: 768px) {
+  .product-how-to .right-col {
+    flex: 0 0 auto !important;
+  }
+}
