@@ -1034,3 +1034,15 @@ body.fitosauna-static {
     display: inline-block;
   }
 }
+
+/* On mobile, the hero (.feature-1) is both the first and last child of its wrapper, so it
+   stacks a padding-bottom (3rem) AND a separate margin-bottom (3rem) -- ~96px of trailing
+   space after the button before the next section starts. Trimming both. */
+@media screen and (max-width: 768px) {
+  .product-features .outer .feature-1 {
+    padding-bottom: 1rem;
+  }
+  .product-features .outer .feature-1:last-child {
+    margin-bottom: 0.5rem;
+  }
+}
