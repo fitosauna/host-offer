@@ -1118,3 +1118,14 @@ body.fitosauna-static {
     flex: 0 0 auto !important;
   }
 }
+
+/* .how-to-block still had a fixed viewport-derived height on mobile (leftover from the
+   original 2-column layout). Now that .right-col no longer force-grows to fill it, that
+   fixed height just leaves ~146px of dead space at the bottom of the section before the
+   next one starts. Let it size to its actual content instead. */
+@media screen and (max-width: 768px) {
+  .product-how-to .how-to-block {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
