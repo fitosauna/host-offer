@@ -57,6 +57,21 @@
     window.addEventListener('scroll', updateHeaderState, { passive: true });
   }
 
+  $all('[data-certificates-swiper]').forEach((track) => {
+    const scrollbar = track.parentElement?.querySelector('[data-certificates-scrollbar]');
+    const thumb = scrollbar?.querySelector('.certs-scrollbar__thumb');
+    if (!thumb) return;
+    const update = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+      const thumbWidthPercent = 25;
+      const travel = 100 - thumbWidthPercent;
+      thumb.style.transform = `translate3d(${(ratio * travel)}%, 0, 0)`;
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+
   $all('.pf-video-wrapper').forEach((wrapper) => {
     const video = wrapper.querySelector('.pf-video');
     const playButton = wrapper.querySelector('.pf-video-play');

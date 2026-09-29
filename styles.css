@@ -1212,3 +1212,27 @@ body.fitosauna-static {
     gap: 0.5rem !important;
   }
 }
+
+/* Certificates carousel on mobile: overflow:hidden meant the real Swiper.js library (never
+   loaded, same as the other carousels on this site) was the only thing that could move the
+   slides -- there was no way to scroll it at all. Enabling native touch-scroll instead.
+   Also making the description text permanently visible on mobile instead of relying on
+   :hover (correctly unavailable on touch) or :active (only visible while actively pressing,
+   disappearing the instant you lift your finger -- not usable for reading longer text). */
+@media screen and (max-width: 768px) {
+  .certificates .certs {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .certificates .certs::-webkit-scrollbar {
+    display: none;
+  }
+  .certificates .certs-block .inner:before {
+    transform: scale(1) !important;
+  }
+  .certificates .certs-block .inner p {
+    opacity: 1 !important;
+    scale: 1 !important;
+  }
+}
