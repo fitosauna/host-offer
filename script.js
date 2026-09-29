@@ -168,6 +168,32 @@
     };
     thumbs.forEach((thumb, index) => thumb.addEventListener('click', () => activate(index)));
     activate(0);
+
+    const mainEl = gallery.querySelector('.product-showcase__main');
+    if (mainEl && slides.length > 1) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let activeIndex = 0;
+      const activateAndTrack = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        activate(activeIndex);
+      };
+      // Wrap the existing thumb click handlers so swipe stays in sync with clicks too.
+      thumbs.forEach((thumb, index) => thumb.addEventListener('click', () => { activeIndex = index; }));
+      mainEl.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+      mainEl.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        const SWIPE_THRESHOLD = 40;
+        if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) activateAndTrack(activeIndex + 1);
+          else activateAndTrack(activeIndex - 1);
+        }
+      }, { passive: true });
+    }
   });
 
   $all('form').forEach((form) => {
