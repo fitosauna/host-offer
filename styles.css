@@ -1161,3 +1161,12 @@ body.fitosauna-static {
     margin-bottom: 1.5rem !important;
   }
 }
+
+/* Mobile gallery: hide the progress-bar strip under the thumbnails (purely decorative, no
+   functionality of its own) since the thumbnail row already lets you pick a photo directly.
+   Keep the "01/06" count -- it's a useful readout even without the bars. */
+@media screen and (max-width: 768px) {
+  .product-showcase__progress {
+    display: none;
+  }
+}
