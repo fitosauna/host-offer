@@ -1142,3 +1142,18 @@ body.fitosauna-static {
     grid-template-columns: 9.5rem repeat(4, 13.4375rem) !important;
   }
 }
+
+/* "Created For Long-term Use" section: same pattern again -- .certificates has min-height:90vh
+   with no mobile override, and its .heading container uses justify-content: space-between,
+   stretching the title and paragraph far apart to fill that forced height. */
+@media screen and (max-width: 768px) {
+  .certificates {
+    min-height: 0 !important;
+  }
+  .certificates .heading {
+    justify-content: flex-start !important;
+  }
+  .certificates h2 {
+    margin-bottom: 1.5rem !important;
+  }
+}
