@@ -1010,3 +1010,17 @@ body.fitosauna-static {
   line-height: 1;
   vertical-align: middle;
 }
+
+/* Mobile shows the offer text between the bullets and the button (matching the mobile
+   CTA area's column-reverse order), while desktop keeps it right below the title. */
+.hero-offer--mobile {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .hero-offer--desktop {
+    display: none;
+  }
+  .hero-offer--mobile {
+    display: inline-block;
+  }
+}
