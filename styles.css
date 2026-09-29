@@ -1078,3 +1078,15 @@ body.fitosauna-static {
     order: 3;
   }
 }
+
+/* The steps list's mobile margin-top (1.5rem) was meant to space it from the title when they
+   sat in the same column together. Now that the title has moved above the video via order,
+   this margin just adds unwanted extra distance between the video and the steps. */
+@media screen and (max-width: 768px) {
+  .product-how-to .left-col .how-to-steps {
+    margin-top: 0;
+  }
+  .product-how-to .how-to-block {
+    gap: 0.75rem;
+  }
+}
