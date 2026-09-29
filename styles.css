@@ -230,26 +230,30 @@ body.fitosauna-static {
 }
 
 /* Show each thumbnail at its image's natural proportions (full width, no forced square crop)
-   instead of the previous fixed-square box. Height now follows each photo's own aspect ratio. */
-.product-showcase__thumb {
-  flex: 0 0 auto;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-.product-showcase__thumb img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-.product-showcase__thumbs {
-  flex: 0 0 6.8125rem;
-  width: 6.8125rem;
-  height: auto;
-  max-height: var(--product-showcase-main-image-height);
-  align-items: stretch;
-  overflow-x: hidden;
+   instead of the previous fixed-square box. Height now follows each photo's own aspect ratio.
+   Desktop only -- this was unscoped before, which silently broke the original theme's own
+   (correct) mobile layout: a horizontal scrolling row of fixed-size thumbnails. */
+@media screen and (min-width: 769px) {
+  .product-showcase__thumb {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .product-showcase__thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .product-showcase__thumbs {
+    flex: 0 0 6.8125rem;
+    width: 6.8125rem;
+    height: auto;
+    max-height: var(--product-showcase-main-image-height);
+    align-items: stretch;
+    overflow-x: hidden;
+  }
 }
 
 /* Replace the browser's default scrollbar (thick, gray, with arrow buttons) with a slim,
