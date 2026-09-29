@@ -79,14 +79,18 @@
     const showPlayButton = () => playButton.classList.remove('paused');
     const hidePlayButton = () => playButton.classList.add('paused');
     const startPlayback = () => {
-      // iOS Safari doesn't support requestFullscreen() on <video>; it has its own
-      // dedicated fullscreen-video API instead, which also handles playback itself.
-      if (typeof video.webkitEnterFullscreen === 'function') {
-        video.webkitEnterFullscreen();
-      } else if (typeof video.requestFullscreen === 'function') {
-        video.requestFullscreen().catch(() => {});
-      } else if (typeof video.webkitRequestFullscreen === 'function') {
-        video.webkitRequestFullscreen();
+      // Fullscreen only on mobile -- desktop keeps the original inline playback.
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if (isMobile) {
+        // iOS Safari doesn't support requestFullscreen() on <video>; it has its own
+        // dedicated fullscreen-video API instead, which also handles playback itself.
+        if (typeof video.webkitEnterFullscreen === 'function') {
+          video.webkitEnterFullscreen();
+        } else if (typeof video.requestFullscreen === 'function') {
+          video.requestFullscreen().catch(() => {});
+        } else if (typeof video.webkitRequestFullscreen === 'function') {
+          video.webkitRequestFullscreen();
+        }
       }
       video.play();
     };
