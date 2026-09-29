@@ -26,6 +26,25 @@
     thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => show(i)));
     if (prevBtn) prevBtn.addEventListener('click', () => show(index - 1));
     if (nextBtn) nextBtn.addEventListener('click', () => show(index + 1));
+
+    const mainEl = section.querySelector('.landing-gallery__main');
+    if (mainEl) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      mainEl.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+      mainEl.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        const SWIPE_THRESHOLD = 40;
+        if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) show(index + 1);
+          else show(index - 1);
+        }
+      }, { passive: true });
+    }
   });
 
 

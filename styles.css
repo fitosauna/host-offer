@@ -1204,3 +1204,11 @@ body.fitosauna-static {
     margin-top: 0 !important;
   }
 }
+
+/* Bring the hero title closer to the image on mobile (reduce the row gap specifically,
+   leaving the title-to-bullets gap below as-is). */
+@media screen and (max-width: 768px) {
+  .product-features .outer .feature-1 {
+    gap: 0.5rem !important;
+  }
+}
