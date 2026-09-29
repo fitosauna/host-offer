@@ -1129,3 +1129,16 @@ body.fitosauna-static {
     min-height: 0 !important;
   }
 }
+
+/* Comparison table on mobile: the Features column (short labels like "Warm-up time") was
+   given the exact same fixed width as the product columns (13.4375rem), wasting horizontal
+   space that could go toward showing more of the product columns. Narrowing just that
+   first column, leaving the product columns and all text/padding unchanged. */
+@media screen and (max-width: 768px) {
+  .table-section .table-block .comparison-grid {
+    grid-template-columns: 7.5rem repeat(3, 13.4375rem) !important;
+  }
+  .table-section .table-block .comparison-grid[data-product-count="4"] {
+    grid-template-columns: 7.5rem repeat(4, 13.4375rem) !important;
+  }
+}
