@@ -1136,9 +1136,9 @@ body.fitosauna-static {
    first column, leaving the product columns and all text/padding unchanged. */
 @media screen and (max-width: 768px) {
   .table-section .table-block .comparison-grid {
-    grid-template-columns: 7.5rem repeat(3, 13.4375rem) !important;
+    grid-template-columns: 9.5rem repeat(3, 13.4375rem) !important;
   }
   .table-section .table-block .comparison-grid[data-product-count="4"] {
-    grid-template-columns: 7.5rem repeat(4, 13.4375rem) !important;
+    grid-template-columns: 9.5rem repeat(4, 13.4375rem) !important;
   }
 }
