@@ -828,6 +828,11 @@ body.fitosauna-static {
 }
 @media screen and (max-width: 768px) {
   .landing-gallery__desc {
+    min-height: 3.25rem;
+  }
+  /* Only "Easy for You, Comfortable for Guests" has a description long enough to wrap to
+     3 lines on mobile (the other two sections never exceed 2 lines). */
+  #landing-features-block_3f6c9e21a8d54b0f92e17c6a4d8b1f30 .landing-gallery__desc {
     min-height: 4.875rem;
   }
 }
