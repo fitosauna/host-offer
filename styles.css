@@ -819,11 +819,17 @@ body.fitosauna-static {
 .landing-gallery__desc {
   max-width: 26rem;
   margin: 0 0 2rem;
+  min-height: 3.25rem;
   color: var(--ink);
   font-family: "Archivo", sans-serif;
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .landing-gallery__desc {
+    min-height: 4.875rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .landing-gallery__desc {
