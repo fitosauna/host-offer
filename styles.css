@@ -795,6 +795,11 @@ body.fitosauna-static {
   .product-showcase__details-row {
     flex-direction: column;
   }
+  .product-showcase__details-row .product-showcase__bundle,
+  .product-showcase__details-row .product-showcase__specs {
+    flex-basis: auto;
+    width: 100%;
+  }
 }
 
 /* Landing-features gallery redesign (Attract More Guests / Fits Any Space / Easy for You...):
