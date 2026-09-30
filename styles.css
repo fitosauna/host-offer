@@ -1254,3 +1254,13 @@ body.fitosauna-static {
   }
 }
 
+
+/* Comparison table on mobile: touch-action was set to "pan-x pinch-zoom", which explicitly
+   excludes vertical panning -- meaning a finger starting on the table could only scroll it
+   horizontally, with no way to scroll the page down without first moving off the table.
+   Allowing both directions so vertical swipes pass through to the page as expected. */
+@media screen and (max-width: 768px) {
+  .table-section .table-block .comparison-scroll {
+    touch-action: pan-x pan-y pinch-zoom !important;
+  }
+}
