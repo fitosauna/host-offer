@@ -1301,3 +1301,14 @@ body.fitosauna-static {
   line-height: 1;
   vertical-align: middle;
 }
+
+/* Scarcity badge fills the full width on mobile, matching the Complete Set Includes table
+   below it, instead of shrinking to fit its text content. */
+@media screen and (max-width: 768px) {
+  .product-showcase__scarcity {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
