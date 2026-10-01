@@ -210,7 +210,7 @@
         if (submitButton) submitButton.disabled = true;
         note.textContent = 'Sending...';
         try {
-          const response = await fetch('https://api.web3forms.com/submit', {
+          const response = await fetch('/send-consultation.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             body: JSON.stringify(Object.fromEntries(new FormData(form))),
