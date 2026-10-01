@@ -67,9 +67,44 @@ body.fitosauna-static {
 .is-open > .faq-item__answer { display: block; }
 
 .static-form-note {
-  margin-top: 14px;
-  font-size: 14px;
-  opacity: .75;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.125rem;
+  border: 1px solid rgba(39, 34, 26, 0.3);
+  font-family: "Archivo", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.static-form-note--sending {
+  border-color: rgba(39, 34, 26, 0.3);
+  color: var(--ink);
+}
+.static-form-note--success {
+  border-color: #2e7d4f;
+  color: #2e7d4f;
+}
+.static-form-note--success:before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("assets/check-circle-green.svg") center/contain no-repeat;
+}
+.static-form-note--error {
+  border-color: #b3382c;
+  color: #b3382c;
+}
+.static-form-note--error:before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("assets/x-circle-red.svg") center/contain no-repeat;
 }
 
 @media (max-width: 1024px) {

@@ -208,6 +208,7 @@
         }
         const submitButton = form.querySelector('[type="submit"]');
         if (submitButton) submitButton.disabled = true;
+        note.className = 'static-form-note static-form-note--sending';
         note.textContent = 'Sending...';
         try {
           const response = await fetch('/send-consultation.php', {
@@ -217,12 +218,15 @@
           });
           const result = await response.json();
           if (result.success) {
+            note.className = 'static-form-note static-form-note--success';
             note.textContent = "Thank you! We'll be in touch shortly.";
             form.reset();
           } else {
+            note.className = 'static-form-note static-form-note--error';
             note.textContent = 'Something went wrong. Please try again or email us directly.';
           }
         } catch (err) {
+          note.className = 'static-form-note static-form-note--error';
           note.textContent = 'Something went wrong. Please try again or email us directly.';
         } finally {
           if (submitButton) submitButton.disabled = false;
