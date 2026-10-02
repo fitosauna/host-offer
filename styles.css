@@ -921,13 +921,8 @@ body.fitosauna-static {
 }
 .landing-gallery__main {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 90vh;
   overflow: hidden;
-}
-@media screen and (max-width: 768px) {
-  .landing-gallery__main {
-    aspect-ratio: 4 / 3;
-  }
 }
 .landing-gallery__main img {
   display: block;
