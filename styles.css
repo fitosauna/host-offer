@@ -1347,3 +1347,12 @@ body.fitosauna-static {
     text-align: center;
   }
 }
+
+/* The original theme hides every <p> inside .form-section .outer .left by default (meant for
+   a different, unrelated duplicate paragraph), with a mobile-only override bringing it back.
+   That accidentally also caught the success/error message (also a <p> in this same column),
+   since it's visible on mobile but invisible on desktop where no override exists. Forcing it
+   to always display regardless of viewport. */
+.form-section .outer .left p.static-form-note {
+  display: inline-flex !important;
+}
