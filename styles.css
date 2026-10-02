@@ -921,12 +921,12 @@ body.fitosauna-static {
 }
 .landing-gallery__main {
   width: 100%;
-  height: clamp(420px, calc(90vh - 320px), 700px);
+  height: clamp(420px, calc(94vh - 320px), 780px);
   overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .landing-gallery__main {
-    height: clamp(320px, calc(90vh - 430px), 500px);
+    height: clamp(320px, calc(94vh - 430px), 560px);
   }
 }
 .landing-gallery__main img {
