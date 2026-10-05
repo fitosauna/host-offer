@@ -500,8 +500,10 @@ body.fitosauna-static {
 }
 .consultation-form__submit {
   flex: 1 1 auto;
-  padding: 1.125rem 2rem;
-  border: 0;
+  /* 1px border (same color as the fill, so invisible by default) lets the outlined hover
+     state appear without the button changing size; padding is reduced by 1px to compensate. */
+  padding: calc(1.125rem - 1px) calc(2rem - 1px);
+  border: 1px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
   font-family: "Archivo Narrow", sans-serif;
@@ -510,21 +512,53 @@ body.fitosauna-static {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-.consultation-form__submit:hover {
-  opacity: 0.85;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .consultation-form__submit-arrow {
   flex: 0 0 3.25rem;
   width: 3.25rem;
   height: 3.25rem;
+  border: 1px solid var(--ink);
   border-radius: 50%;
   background-color: var(--ink);
   background-image: url("assets/arrow-narrow-right-beige.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Inverted state, same idea as the other buttons on the page: the filled button turns into an
+   outlined one (and the arrow circle turns from filled to outlined with a dark arrow).
+   Hover is limited to devices that really have it, so touch screens don't get a "stuck"
+   inverted button after a tap; :active gives touch users brief pressed feedback instead. */
+@media (hover: hover) {
+  .consultation-form__submit-row:hover .consultation-form__submit:not(:disabled) {
+    background: transparent;
+    color: var(--ink);
+  }
+  .consultation-form__submit-row:hover .consultation-form__submit:not(:disabled) + .consultation-form__submit-arrow {
+    background-color: transparent;
+    background-image: url("assets/arrow-narrow-right.svg");
+  }
+}
+.consultation-form__submit:active:not(:disabled),
+.consultation-form__submit:focus-visible:not(:disabled) {
+  background: transparent;
+  color: var(--ink);
+}
+.consultation-form__submit:active:not(:disabled) + .consultation-form__submit-arrow,
+.consultation-form__submit:focus-visible:not(:disabled) + .consultation-form__submit-arrow {
+  background-color: transparent;
+  background-image: url("assets/arrow-narrow-right.svg");
+}
+/* While the form is being sent the button is disabled: dim it and show a waiting cursor. */
+.consultation-form__submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.consultation-form__submit:disabled + .consultation-form__submit-arrow {
+  opacity: 0.6;
 }
 .form-section .outer .right p {
   font-size: 0.875rem;
